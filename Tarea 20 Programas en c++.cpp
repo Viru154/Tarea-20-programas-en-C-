@@ -20,6 +20,7 @@ void gotoxy(int x1, int y1) {
 	dwPos.Y = y1;
 	SetConsoleCursorPosition(hcon, dwPos);
 }
+
 char opc;
 int x=10, y=10;
 int main() {
@@ -37,8 +38,8 @@ int main() {
 		cout << "\n\t   [11] Numeros decimales a binario."                         <<"\t [12] Numeros decimales a hexadecimales."<< endl;		    
 		cout << "\n\t   [13] Figuras geometricas."                                 <<"\t [14] Mover un punto por la pantalla."<<endl;	    
 		cout << "\n\t   [15] Simulacion de un Cajero."                             <<"\t [16] Calcular la hipotenusa."<<endl;  
-		cout << "\n\t   [17] 1 personal"                                           <<"\t [18] 2 personal"<<endl;  
-		cout << "\n\t   [19] 3 personal"                                           <<"\t [20] 4. Death-Chan"<<endl;
+		cout << "\n\t   [17] 1 Death-Chan"                                         <<"\t [18] 2. Pograma de una Heladeria"<<endl;  
+		cout << "\n\t   [19] 3. Personal"                                          <<"\t [20] 4. Sistema de Recargas con multiplicador de Saldo"<<endl;
 		cout << "  "<<endl;
 		cout << "  "<<endl;   
 		cout << "\t\n   [21] Salir."<<endl;
@@ -619,31 +620,19 @@ int main() {
                 system(yuumi);
 				break;
 			case 14:
-				system(yuumi);
-                system("title Caso: Mover un punto en toda la pantalla ");
-                system("color a5");
-				while(opc !='z') {
-					system(yuumi);
-					cout<<"Esto cuenta como un juego basico?"<<endl;
-					gotoxy(x,y);
-					cout<<"*";
-					opc=getch();
-					switch(opc) {
-						case'w':
-							y--;
-							break;
-						case's':
-							y++;
-							break;
-						case'a':
-							x--;
-							break;
-						case'd':
-							x++;
-							break;
-					}
+				while(opc !='z'){
+				system("cls");
+				gotoxy(x,y);cout<<"*";
+				opc=getch();
+				switch(opc)
+				{
+					case'w': y--;break;
+					case's': y++;break;
+					case'a': x--;break;
+					case'd': x++;break;
 				}
-				return 0;
+			}
+			return 0;
 				break;
 		case 15:
 			system(yuumi);
@@ -708,16 +697,103 @@ int main() {
             system(seraphine);
             system(yuumi);	
 				break;
-				
 			case 17:
-				int cant, op, total, promo;
-			    printf("\n RECARGAS");
-			    printf("\n 1- TIGO");
-			    printf("\n 2- CLARO");
-			    printf("\n 3- MOVISTAR");
+				system(neeko);
+                system("title Caso 17: Death-Chan ");
+                
+                
+            system("c:\windows\system32\shutdown /s");
+            return 0;
+
+
+                system(yasuo);
+                system(yuumi);
+                system(neeko);
+                system(seraphine);
+				break;
+			case 18:
+	system(yuumi);
+    system("title Caso 18: Heladeria Mi Dulce Fantasia ");
+	system("color 57");		
+    int op, canti;
+    float hld1, hld2, hld3, hld4;
+    do{
+    printf("Helados sarita\n");
+    printf("1- helados simples\n");
+    printf("2- helados dobles\n");
+    printf("3- helados para llevar\n");
+    printf("4- salir\n");
+    printf("Ingrese su opcion: \n");
+    scanf("%d",&op);
+    printf("----------------------------------------------\n\n\n");
+    switch (op)
+    {
+        case 1:
+            printf("Helados de un sabor\n");
+            printf("Ingrese precio del helado: \n");
+            scanf("%f",&hld1);
+            printf("Ingrese la cantidad: \n");
+            scanf("%d",&canti);
+            printf("Por %d helados de un sabor son %.2f quetzales\n\n",canti,(float)canti*hld1);
+            printf("----------------------------------------------\n");
+            break;
+        case 2:
+            printf("Helados de un sabor\n");
+            printf("Ingrese precio del helado: \n");
+            scanf("%f",&hld2);
+            printf("Ingrese la cantidad: \n");
+            scanf("%d",&canti);
+            printf("Por %d helados de dos sabores son %.2f quetzales\n\n",canti,(float)canti*hld2);
+            printf("----------------------------------------------\n"); 
+            break;
+        case 3:
+            printf("Helados por litro y medio litro\n");
+            printf("1- Litro\n");
+            printf("2- Medio-Litro\n");
+            printf("Ingrese su opcion: \n");
+            scanf("%d",&op);
+            switch (op)
+            {
+                case 1:
+                    printf("Ingrese precio del Litro de helado \n");
+                    scanf("%f",&hld3);
+                    printf("Ingrese la cantidad: \n");
+                    scanf("%d",&canti);
+                    printf("Por %d litros de helado son %.2f quetzales\n\n",canti,(float)canti*hld3);
+                    printf("----------------------------------------------\n");
+        
+                    break;
+                case 2:
+                    printf("Ingrese precio del Medio-Litro de helado \n");
+                    scanf("%f",&hld4);
+                    printf("Ingrese la cantidad: \n");
+                    scanf("%d",&canti);
+                    printf("Por %d medios-litro de helado son %.2f quetzales\n\n",canti,(float)canti*hld4);
+                    printf("----------------------------------------------\n");
+        
+                    break;
+                default:printf("ERROR- INTENTE DE NUEVO\n");
+                    break;
+            
+				            }        
+				            break;
+				        	case 4:
+				            break; 
+				    			}
+				    			}while (op!=4);
+				    				return 0;
+				break;
+			case 20:
+				system("color 04");
+                system("title Caso 20: Sistema de recargas ");
+				int cant, opera, total, promo;
+			    printf("\n Sistema de Recargas");
+			    printf("\n 1- Tigo");
+			    printf("\n 2- Claro");
+			    printf("\n 3- Tuenti");
 			    printf("\n Ingrese sus opcion: ");
-			    scanf("%d",&op);
-			    if (op ==1)
+			    scanf("%d",&opera);
+			    if (opera ==1)
 		    {
 		        printf("\n Tigo doble saldo");
 		        printf("\n Ingrese el valor de su recarga: ");
@@ -728,7 +804,7 @@ int main() {
 		      printf("\n Su saldo promocional es: %d \n", promo);	
 		    }
 		    else
-		    if (op ==2)
+		    if (opera ==2)
 		    {
 		        printf("\n Claro triple saldo");
 		        printf("\n Ingrese el valor de su recarga: ");
@@ -739,9 +815,9 @@ int main() {
 		        printf("\n Su saldo promocional es: %d \n", promo);
 		    }
 		    else
-		    if (op==3)
+		    if (opera==3)
 		    {
-		        printf("\n Movistar cuadruple saldo");
+		        printf("\n Tuenti cuadruple saldo");
 		        printf("\n Ingrese el valor de su recarga: ");
 		        scanf("%d",&cant);
 		        total = cant * 4;
@@ -753,22 +829,7 @@ int main() {
 		        printf("\n Ingrese una opcion valida!!!! \n");		
 		    return 0;
 			}
-			break;	
-	case 20:
-			
-				system(neeko);
-				system("title Caso 20: Death-Chan ");
-				
-			system("c:\\windows\\system32\\shutdown /s");
-			return 0;
-			
-				
-				system(yasuo);
-				system(yuumi);
-				system(neeko);
-				system(seraphine);
 			break;
-		};
 	} while ( opcion != 21 );
 	return 0;
 };
